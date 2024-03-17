@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Classes_Abstratas_Interfaces
 {
-    internal abstract class Veiculo: IMovimentacao
+    internal abstract class Veiculo: IMovimentacao //classe pode implementar várias interfaces
     {
         protected int Ano;
         public void Abastecer()
