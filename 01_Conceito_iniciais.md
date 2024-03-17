@@ -44,7 +44,7 @@ public class Mago
         public string Especialidade { get; set; }
 
         // Métodos
-        public void LancarFeitico(string tipoFeitico)
+        public virtual void LancarFeitico(string tipoFeitico)
         {
             Console.WriteLine($"{Nome} lança um feitiço {tipoFeitico}!");
         }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _08_Heranca_construtores
+namespace _09_Polimorfismo
 {
-    internal class PessoaFisica: Pessoa
+    internal class PessoaFisica:Pessoa
     {
         public string Cpf { get; set; }
         public string Nome { get; set; }
@@ -21,7 +21,7 @@ namespace _08_Heranca_construtores
             set { email = value; }
         }
         //Ele busca o construtor da classe base, se não tiver personalizado, pega o padrão
-        public PessoaFisica(string nome, string cpf, string telefone, string email):base(telefone, email)
+        public PessoaFisica(string nome, string cpf, string telefone, string email) : base(telefone, email)
         {
             Cpf = cpf;
             Nome = nome;
@@ -30,6 +30,11 @@ namespace _08_Heranca_construtores
         public void BuscarCpf()
         {
             Console.WriteLine("Buscando CPF");
+        }
+
+        public override double PagarImpostos(double lucro)
+        {
+            return lucro * 0.1;
         }
 
         public void Informacoes()
