@@ -47,7 +47,8 @@ Os atributos nome e idade são declarados como private. Isso significa que eles 
 ## C# também possui outros modificadores de acesso:
 
 - private protected: acessível apenas dentro da classe e classes derivadas no mesmo assembly.
-- internal: acessível apenas dentro do mesmo assembly.
+- internal: acessível apenas dentro do mesmo assembly.(projeto)
+ - Exemplo:  Se você está criando um biblioteca com classes uteis e algumas classes são apenas para facilitar a construção de classes principais(expostas externamente - public), então o internal é interessante para proteger e evitar que os usuários se confundam com a chamada de classes e métodos que eles não sabem usar.
 - protected: acessível apenas dentro da classe e classes derivadas.
 
 ## As propriedades autoimplementadas 
@@ -57,7 +58,48 @@ Conseguimos definir um valor default como em um campo
 ```c#
 public class ContaCorrente
 {
-    public double Saldo { get; set; } = 200.0;   
+    private double Saldo { get; set; } = 200.0;   
     public string Titular{get;set;}= "Não identificado"; 
 }
+```
+Outro padrão
+
+```c#
+public class Pessoa
+{
+    private string _nome;
+    public string Nome {
+        get { return _nome.ToLower(); }
+        set { _nome = value.Trim().ToUpper(); }
+    }
+}
+
+```
+
+# readonly
+é como se o set estivesse privado, o atributo precisa ser definido anteriormente no construtor ou no atributo
+
+```c#
+class Pessoa
+{
+    public readonly string Nome = "Paloma";
+}
+```
+ou 
+```c#
+class Pessoa
+{
+    public readonly string Nome;
+    Pessoa()
+    {
+        Nome = "Paloma"
+    }
+}
+```
+
+```c#
+    Pessoa pessoa = new Pessoa();
+    Console.Write(pessoa.Nome);
+    pessoa.Nome = "Ana" //erro
+
 ```

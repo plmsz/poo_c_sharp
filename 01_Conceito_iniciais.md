@@ -14,7 +14,7 @@ Isso implica em reunir os dados (atributos) e os métodos (comportamentos) relac
 Modificadores de acesso: Controlam o nível de acesso aos atributos e métodos das classes, definindo-os como públicos, privados ou protegidos.
 - Public: Permite acesso irrestrito de qualquer parte do código.
 - Private: Restringe o acesso à classe em que o membro foi definido.
-Protected: Permite acesso à classe e suas subclasses.
+- Protected: Permite acesso à classe e suas subclasses.
 ## Exemplo:
 Em uma classe de carro, podemos encapsular os detalhes do motor, como tipo, potência, etc., e fornecer métodos públicos para ligar, desligar o motor, etc., ocultando os detalhes de implementação do motor.
 Herança:
