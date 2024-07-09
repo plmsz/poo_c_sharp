@@ -46,10 +46,15 @@ Os atributos nome e idade são declarados como private. Isso significa que eles 
 
 ## C# também possui outros modificadores de acesso:
 
-- private protected: acessível apenas dentro da classe e classes derivadas no mesmo assembly.
 - internal: acessível apenas dentro do mesmo assembly.(projeto)
  - Exemplo:  Se você está criando um biblioteca com classes uteis e algumas classes são apenas para facilitar a construção de classes principais(expostas externamente - public), então o internal é interessante para proteger e evitar que os usuários se confundam com a chamada de classes e métodos que eles não sabem usar.
+
 - protected: acessível apenas dentro da classe e classes derivadas.
+
+- private protected: acessível apenas dentro da classe e classes derivadas no mesmo assembly.
+
+- protected internal: acessível dento do mesmo assembly e em subclasses, mesmo que essas subclasse estejam em um assembly diferente
+
 
 ## As propriedades autoimplementadas 
 Tornam a declaração de propriedade mais concisa quando nenhuma lógica adicional for necessária nos acessadores de propriedade. Elas também habilitam o código do cliente a criar objetos. Ao declarar uma propriedade, como mostrado no exemplo a seguir, o compilador cria um campo de suporte privado e anônimo que pode ser acessado somente por meio dos acessadores get e set da propriedade. 

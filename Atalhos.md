@@ -7,6 +7,7 @@
 - SHIFT + TAB -  volta indeta��o
 - SHIFT + ALT + . - proxima palavra
 - ctrl + L - deletar linha
+- ctrl + r, g => organiza os imports
 
 ## Debug
 � F9 - marcar/desmarcar breakpoint
